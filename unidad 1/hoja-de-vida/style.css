@@ -65,7 +65,7 @@ body {
 .lado-izquierdo i {
     width: 20px;
     margin-right: 10px;
-    color: #dfe6e9; /* Gris claro como los de Alfredo */
+    color: #dfe6e9;
     text-align: center;
 }
 
@@ -127,6 +127,14 @@ header h2 {
     line-height: 1.8;
 }
 
+/* Mejor alineación de items con botón eliminar y texto en una línea sin recortes */
+.lado-derecho li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;  /* evita saltos de línea */
+}
+
 .doble {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -135,4 +143,21 @@ header h2 {
 
 @media (max-width: 850px) {
     .cv { grid-template-columns: 1fr; width: 100%; }
+}
+
+/* BOTÓN ELIMINAR */
+.btn-eliminar {
+    margin-left: 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
 }

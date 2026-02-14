@@ -13,25 +13,24 @@
 <div class="cv">
     <aside class="lado-izquierdo">
         <img src="/imagenes/imagen fondo azul.jpeg" alt="Foto de perfil">
-
         <div class="contenedor-info">
             <section class="seccion-izquierda">
                 <h3>CONTACTO</h3>
-                <p><i class="fa-solid fa-phone"></i> +57 317 703 2927</p>
+                <p><i class="fa-solid fa-phone"></i> +57 315 070 9981</p>
                 <p><i class="fa-solid fa-envelope"></i> penaderian867@gmail.com</p>
-                <p><i class="fa-solid fa-id-card"></i> 1.112.040.674</p>
-                <p><i class="fa-solid fa-location-dot"></i> Cra 13a #18-31</p>
+                <p><i class="fa-solid fa-id-card"></i> 1.112.670.354</p>
+                <p><i class="fa-solid fa-location-dot"></i> cra 12a #27-15</p>
             </section>
 
             <section class="seccion-izquierda">
                 <h3>REFERENCIAS</h3>
                 <div class="referencia-item">
-                    <strong><i class="fa-solid fa-user"></i> Yuliana Calero Giraldo</strong>
-                    <span>317 328 3220</span>
+                    <strong><i class="fa-solid fa-user"></i> Carlos Vidal</strong>
+                    <span>317 340 6453</span>
                 </div>
                 <div class="referencia-item">
-                    <strong><i class="fa-solid fa-user"></i> Natalia Villaquiran</strong>
-                    <span>315 690 8300</span>
+                    <strong><i class="fa-solid fa-user"></i> Laura Murcia</strong>
+                    <span>320 381 4019</span>
                 </div>
             </section>
         </div>
@@ -48,16 +47,13 @@
             <p>Estudiante de Tecnología en Desarrollo de Sistemas de Información y de Software. Persona responsable, proactiva y con capacidad de trabajo en equipo. Busco mi primera experiencia laboral para aplicar mis conocimientos, fortalecer mis habilidades y contribuir al logro de objetivos dentro de una empresa.</p>
         </section>
 
+        <!-- EXPERIENCIA -->
         <section>
             <h3>EXPERIENCIA</h3>
-            <p>Actualmente sin experiencia laboral formal. Sin embargo, cuento con habilidades y aptitudes para desempeñarme en roles operativos y de apoyo, tales como:</p>
-            <ul>
-                <li>Organización y control de inventarios</li>
-                <li>Trabajo en equipo y comunicación efectiva</li>
-                <li>Manejo responsable de herramientas</li>
-                <li>Puntualidad y compromiso</li>
-                <li>Facilidad de aprendizaje</li>
+            <ul id="lista-experiencia">
+                <!-- lista vacía, solo se agrega dinámicamente -->
             </ul>
+            <button id="agregar-experiencia">Agregar experiencia</button>
         </section>
 
         <section>
@@ -73,15 +69,15 @@
         </section>
 
         <div class="doble">
+            <!-- HABILIDADES -->
             <section>
                 <h3>HABILIDADES</h3>
-                <ul>
-                    <li>Liderazgo</li>
-                    <li>Comunicación</li>
-                    <li>Trabajo en equipo</li>
-                    <li>Toma de decisiones</li>
+                <ul id="lista-habilidades">
+                    <!-- lista vacía -->
                 </ul>
+                <button id="agregar-habilidad">Agregar habilidad</button>
             </section>
+
             <section>
                 <h3>IDIOMAS</h3>
                 <p>Español – Nativo</p>
@@ -89,6 +85,50 @@
         </div>
     </main>
 </div>
+
+<script>
+    const listaExperiencia = document.getElementById("lista-experiencia");
+    const listaHabilidades = document.getElementById("lista-habilidades");
+    const btnExperiencia = document.getElementById("agregar-experiencia");
+    const btnHabilidad = document.getElementById("agregar-habilidad");
+
+    // Función para agregar botón eliminar a un li
+    function agregarBotonEliminar(li) {
+        const btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "Eliminar";
+        btnEliminar.classList.add("btn-eliminar");
+
+        btnEliminar.addEventListener("click", () => {
+            li.remove();
+        });
+
+        li.appendChild(btnEliminar);
+    }
+
+    // Crear nuevo elemento
+    function crearElemento(texto, lista) {
+        const li = document.createElement("li");
+        li.textContent = texto + " ";
+        agregarBotonEliminar(li);
+        lista.appendChild(li);
+    }
+
+    // Agregar experiencia
+    btnExperiencia.addEventListener("click", () => {
+        const nuevaExperiencia = prompt("Escribe la nueva experiencia:");
+        if (nuevaExperiencia && nuevaExperiencia.trim() !== "") {
+            crearElemento(nuevaExperiencia, listaExperiencia);
+        }
+    });
+
+    // Agregar habilidad
+    btnHabilidad.addEventListener("click", () => {
+        const nuevaHabilidad = prompt("Escribe la nueva habilidad:");
+        if (nuevaHabilidad && nuevaHabilidad.trim() !== "") {
+            crearElemento(nuevaHabilidad, listaHabilidades);
+        }
+    });
+</script>
 
 </body>
 </html>

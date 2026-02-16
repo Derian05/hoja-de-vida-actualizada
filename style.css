@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.cv {
+    width: 210mm;
+    min-height: 297mm;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* LADO IZQUIERDO */
+.lado-izquierdo {
+    background-color: #2f3e4e;
+    color: white;
+    padding: 60px 30px;
+}
+
+.lado-izquierdo img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 70px;
+    border: 7px solid #4a5a6a;
+}
+
+.seccion-izquierda {
+    margin-bottom: 120px;
+}
+
+.lado-izquierdo h3 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+.lado-izquierdo h3::before, .lado-izquierdo h3::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.lado-izquierdo h3::before { margin-right: 12px; }
+.lado-izquierdo h3::after { margin-left: 12px; }
+
+/* Estilo de los iconos */
+.lado-izquierdo i {
+    width: 20px;
+    margin-right: 10px;
+    color: #dfe6e9;
+    text-align: center;
+}
+
+.lado-izquierdo p, .referencia-item span {
+    font-size: 13px;
+    line-height: 2.8;
+    color: #dfe6e9;
+    display: flex;
+    align-items: center;
+}
+
+.referencia-item {
+    margin-bottom: 35px;
+}
+
+.referencia-item strong {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+/* LADO DERECHO */
+.lado-derecho {
+    padding: 50px 45px;
+    color: #2d3436;
+}
+
+header h1 {
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #2f3e4e;
+}
+
+header h2 {
+    font-size: 14px;
+    color: #636e72;
+    border-bottom: 2px solid #2f3e4e;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.lado-derecho section {
+    margin-bottom: 35px;
+}
+
+.lado-derecho h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+    color: #2f3e4e;
+}
+
+.lado-derecho p, .lado-derecho li {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Mejor alineación de items con botón eliminar y texto en una línea sin recortes */
+.lado-derecho li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;  /* evita saltos de línea */
+}
+
+.doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 850px) {
+    .cv { grid-template-columns: 1fr; width: 100%; }
+}
+
+/* BOTÓN ELIMINAR */
+.btn-eliminar {
+    margin-left: 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
